@@ -9,6 +9,22 @@ The benchmark has two complementary components:
 
 ---
 
+## Data Availability
+
+Due to file-size limitations, the full **p-hat-driven synthetic datasets** and the **preprocessed real benchmark datasets** are hosted externally on Google Drive:
+
+[Download p-hat-driven and real benchmark data](https://drive.google.com/drive/folders/1xP0jSkVAvklFa3BgkQeTNCes2Du5W8iQ?usp=sharing)
+
+After downloading, place the files under the following directories:
+
+```text
+data/synthetic/phat_driven_top2/
+data/synthetic/phat_driven_mixed/
+data/real/
+```
+
+---
+
 ## Models Evaluated
 
 Eight online Bayesian learners are included. Paper names are used consistently across the codebase and configuration files.
