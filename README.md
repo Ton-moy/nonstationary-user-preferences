@@ -9,18 +9,6 @@ The benchmark has two complementary components:
 
 ---
 
-## What This Benchmark Evaluates
-
-Conventional recommender system benchmarks emphasize aggregate rating prediction (e.g., RMSE, MSE), which can be insensitive to whether a model actually adapts its internal preference estimate when a user's preferences change. This benchmark is designed to expose that gap. It evaluates each model on three complementary axes:
-
-- **Preference change detection** (ROC-AUC and PR-AUC over change events vs. stable steps)
-- **Preference tracking** (tracking ratio, mean tracking lag, and capped MTL)
-- **Rating prediction** (one-step-ahead prequential MSE)
-
-Models that excel on rating prediction can fail on tracking, and vice versa: this benchmark is constructed to make those dissociations visible.
-
----
-
 ## Models Evaluated
 
 Eight online Bayesian learners are included. Paper names are used consistently across the codebase and configuration files.
