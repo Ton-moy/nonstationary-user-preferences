@@ -1,0 +1,44 @@
+{
+  "_note": "Hyperparameters tuned on the real Goodreads dataset via Optuna TPE (30K trials, Spearman-rank objective). Source: real_dataset/optuna_correlation/*/GLOBAL__best_then_full_eval.json",
+  "evaluation": {
+    "KF": {
+      "variance_p": 30.521670856017845,
+      "variance": 6.345480213077672,
+      "delta": 0.001796641345847316,
+      "eta": 3.8120054963215868e-06
+    },
+    "AROW": {
+      "lam1": 1.6234509174843752,
+      "lam2": 0.5623231014151546
+    },
+    "BLR": {
+      "default_variance": 0.8291265736841238,
+      "noise_precision": 5.264580862349774
+    },
+    "vbBLR": {
+      "default_variance": 3.9551558611690463,
+      "noise_precision": 1.1018493563899274,
+      "tau": 0.38866324644666855
+    },
+    "fBLR": {
+      "default_variance": 1.1687402307320816,
+      "noise_precision": 3.7353349763906114,
+      "rho": 0.9661922596960144
+    },
+    "BLRsw": {
+      "default_variance": 0.39872121274002786,
+      "noise_precision": 12.354424184416422,
+      "m": 50
+    },
+    "PBLR": {
+      "alpha": 0.8832936825898272,
+      "default_variance": 0.3563567834281792,
+      "noise_precision": 18.02683532613558
+    },
+    "NIG": {
+      "default_variance": 99.99994807882554,
+      "default_a": 1.9721858399594554,
+      "default_b": 0.07659061860189588
+    }
+  }
+}

@@ -1,0 +1,97 @@
+# Canonical synthetic benchmark configuration.
+# Values come from the main paper and online appendix.
+
+seed: 42
+
+reported_totals:
+  users: 540
+  items: 17912
+  interactions: 35976
+  preference_change_events: 2436
+
+topics:
+  k: 10
+  initial_explored: 4
+
+timeline:
+  cycle_length: 10
+  first_change_timestep: 11
+  change_label_l2_threshold: 0.25
+
+preference_update:
+  eta_big: 0.8
+  eta_small: 0.3
+  unexplored_clip: [-0.01, 0.01]
+  preference_clip: [-1.0, 1.0]
+
+dirichlet:
+  explored_alpha: 2.0
+  unexplored_alpha: 1.0
+  stable_high_alphas: [15.0, 20.0]
+  change_new_topic_alpha: 20.0
+  two_topic_change_alpha: 20.0
+
+catalog:
+  one_topic:
+    alpha_high: 20.0
+    alpha_other: 2.0
+    samples_per_topic: 50
+  two_topic:
+    alpha_high: 20.0
+    alpha_other: 2.0
+    samples_per_pair: 50
+  four_topic:
+    alpha_high: 8.0
+    alpha_other: 2.0
+    samples_per_tuple: 1
+  expected_size: 2960
+
+settings:
+  theta_driven:
+    output_dir: data/synthetic/theta_driven
+    users: 90
+    reported_items: 5996
+    reported_interactions: 5996
+    reported_preference_change_events: 411
+  p_driven:
+    output_dir: data/synthetic/p_driven
+    users: 90
+    reported_items: 5996
+    reported_interactions: 5996
+    reported_preference_change_events: 411
+  phat_driven_top2:
+    output_dir: data/synthetic/phat_driven_top2
+    users: 180
+    reported_items: 2960
+    reported_interactions: 11992
+    reported_preference_change_events: 812
+    selection:
+      top_fraction: 0.02
+      top_partition_probability: 1.0
+  phat_driven_mixed:
+    output_dir: data/synthetic/phat_driven_mixed
+    users: 180
+    reported_items: 2960
+    reported_interactions: 11992
+    reported_preference_change_events: 812
+    selection:
+      top_fraction: 0.02
+      top_partition_probability: 0.75
+
+scenarios:
+  - PS
+  - PSC1T
+  - PSC2T
+  - PB
+  - PBC1T
+  - PBC2T
+
+models_for_phat_policy:
+  - KF-AF
+  - AROW
+  - BLR
+  - BLR-VB
+  - BLR-FF
+  - BLR-SW
+  - BLR-PP
+  - BLR-NIG
